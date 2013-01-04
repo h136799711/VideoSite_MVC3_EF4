@@ -3,26 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebSite", "WebSite", "{B0307F75-ED10-4296-BB2E-98DDC27DCE65}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebService", "WebService", "{199B24DC-0D81-4700-80C6-922F70E30851}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF", "EF", "{47541AC3-19BD-43E2-ACEC-33968D16E354}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Respotity\Repository.csproj", "{2FD50EF1-1443-4F78-9641-24A59AD47752}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "site", "site\site.csproj", "{F2B05608-9F97-4559-9453-4652A9BCF7C3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{80B80523-807A-4DB9-B279-8BAF82A1AE6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteTest", "SiteTest\SiteTest.csproj", "{CC664434-84A8-4A54-9CFD-06072ED7637F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoSite.EF.Infrastructure", "VideoSite.EF.Infrastructure\VideoSite.EF.Infrastructure.csproj", "{9E3B8468-10E9-487B-B04F-0D808E23ECEF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B6547839-67C7-4A13-ADA6-E431B2979223}"
-	ProjectSection(SolutionItems) = preProject
-		Local.testsettings = Local.testsettings
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-		VideoSite_MVC3_EF4.vsmdi = VideoSite_MVC3_EF4.vsmdi
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoSite.EF.Model", "VideoSite.EF.Model\VideoSite.EF.Model.csproj", "{FE51CBC1-C682-4847-B62C-0A3FA2861F01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{FE51CBC1-C682-4847-B62C-0A3FA2861F01}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoSite.EF.Repository", "VideoSite.EF.Respotity\VideoSite.EF.Repository.csproj", "{2FD50EF1-1443-4F78-9641-24A59AD47752}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoSite.site", "VideoSite.EF.site\VideoSite.site.csproj", "{F2B05608-9F97-4559-9453-4652A9BCF7C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoSite.SiteTest", "VideoSite.SiteTest\VideoSite.SiteTest.csproj", "{CC664434-84A8-4A54-9CFD-06072ED7637F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoSite.EF.ModelTest", "VideoSite.EF.ModelTest\VideoSite.EF.ModelTest.csproj", "{90537065-B06A-467D-93C8-3CCF74D8A189}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoSite.EF.RepositoryTest", "VideoSite.EF.RepositoryTest\VideoSite.EF.RepositoryTest.csproj", "{3535FFC1-BC07-43F5-ACA9-1D85B9B808F9}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -33,6 +30,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E3B8468-10E9-487B-B04F-0D808E23ECEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E3B8468-10E9-487B-B04F-0D808E23ECEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E3B8468-10E9-487B-B04F-0D808E23ECEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E3B8468-10E9-487B-B04F-0D808E23ECEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE51CBC1-C682-4847-B62C-0A3FA2861F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE51CBC1-C682-4847-B62C-0A3FA2861F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE51CBC1-C682-4847-B62C-0A3FA2861F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE51CBC1-C682-4847-B62C-0A3FA2861F01}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2FD50EF1-1443-4F78-9641-24A59AD47752}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2FD50EF1-1443-4F78-9641-24A59AD47752}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FD50EF1-1443-4F78-9641-24A59AD47752}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,19 +50,25 @@ Global
 		{CC664434-84A8-4A54-9CFD-06072ED7637F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC664434-84A8-4A54-9CFD-06072ED7637F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC664434-84A8-4A54-9CFD-06072ED7637F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FE51CBC1-C682-4847-B62C-0A3FA2861F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FE51CBC1-C682-4847-B62C-0A3FA2861F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FE51CBC1-C682-4847-B62C-0A3FA2861F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FE51CBC1-C682-4847-B62C-0A3FA2861F01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90537065-B06A-467D-93C8-3CCF74D8A189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90537065-B06A-467D-93C8-3CCF74D8A189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90537065-B06A-467D-93C8-3CCF74D8A189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90537065-B06A-467D-93C8-3CCF74D8A189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3535FFC1-BC07-43F5-ACA9-1D85B9B808F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3535FFC1-BC07-43F5-ACA9-1D85B9B808F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3535FFC1-BC07-43F5-ACA9-1D85B9B808F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3535FFC1-BC07-43F5-ACA9-1D85B9B808F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F2B05608-9F97-4559-9453-4652A9BCF7C3} = {B0307F75-ED10-4296-BB2E-98DDC27DCE65}
-		{2FD50EF1-1443-4F78-9641-24A59AD47752} = {47541AC3-19BD-43E2-ACEC-33968D16E354}
+		{9E3B8468-10E9-487B-B04F-0D808E23ECEF} = {47541AC3-19BD-43E2-ACEC-33968D16E354}
 		{FE51CBC1-C682-4847-B62C-0A3FA2861F01} = {47541AC3-19BD-43E2-ACEC-33968D16E354}
+		{2FD50EF1-1443-4F78-9641-24A59AD47752} = {47541AC3-19BD-43E2-ACEC-33968D16E354}
 		{CC664434-84A8-4A54-9CFD-06072ED7637F} = {80B80523-807A-4DB9-B279-8BAF82A1AE6F}
-		{B6547839-67C7-4A13-ADA6-E431B2979223} = {80B80523-807A-4DB9-B279-8BAF82A1AE6F}
+		{90537065-B06A-467D-93C8-3CCF74D8A189} = {80B80523-807A-4DB9-B279-8BAF82A1AE6F}
+		{3535FFC1-BC07-43F5-ACA9-1D85B9B808F9} = {80B80523-807A-4DB9-B279-8BAF82A1AE6F}
 	EndGlobalSection
 EndGlobal
