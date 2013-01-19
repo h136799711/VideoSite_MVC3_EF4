@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Entity;
-using VideoSite.EF.Infrastructure;
-namespace VideoSite.EF.Repository
+
+namespace VideoSite.EF.Infrastructure
 {
     public class Repository<T>:IRepository<T>,IUnitOfWork where T : class
     {
@@ -38,7 +38,7 @@ namespace VideoSite.EF.Repository
         public void Modify(T entity)
         {
             
-      
+            
         }
 
         public IEnumerable<T> List()

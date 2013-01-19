@@ -1,6 +1,25 @@
-﻿@{
-    ViewBag.Title = "About Us";
+﻿@model IList<VideoSite.EF.Model.User>
+
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>About</h2>
-
+ @section JAVASCRIPTANDCSS{
+	<style type="text/css">
+		.users-list {
+			list-style-type:none;
+		}
+	</style>
+ }
+<h2>总共数: @Model.Count()</h2>
+<ul class="users-list">
+	
+	<hr/>
+	 @foreach(var user in Model){
+		<li>@user.ID</li>
+		<li>@user.username</li>
+		<li>@user.password</li>
+		<li>@user.extramsg</li>
+		<hr/>
+	}
+</ul>

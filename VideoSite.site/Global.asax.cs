@@ -36,8 +36,6 @@ namespace VideoSite.site
         public static void RegisterAndResolveType()
         {
             var builder = new ContainerBuilder();
-         //  builder.RegisterType<MainContext>().As<IUnitOfWork>().InstancePerLifetimeScope();
-         //  builder.RegisterType<UserRepository>().As<IUserRepository>().InstancePerLifetimeScope();
             builder.RegisterModule(new ConfigurationSettingsReader("autofac"));
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             var container = builder.Build();

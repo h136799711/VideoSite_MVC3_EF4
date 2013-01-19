@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using VideoSite.EF.Repository;
+using VideoSite.EF.IRepository;
 using VideoSite.EF.Infrastructure;
 using VideoSite.EF.Model;
 namespace VideoSite.site.Controllers
@@ -14,12 +14,12 @@ namespace VideoSite.site.Controllers
         public HomeController(IUserRepository userRep)
         {
             iuserRepo = userRep;
-            using (var db = new MainContext())
+            using (var db = new MySqlContext())
             {
                 db.Configuration.AutoDetectChangesEnabled = true;
                 User user = new User() { ID = 123, username="hebidu", password="123456" , extramsg="null" };
                 db.Users.Add(user);
-
+                db.SaveChanges();
                
               //  db.Users.Attach(user);
             }
@@ -33,7 +33,14 @@ namespace VideoSite.site.Controllers
 
         public ActionResult About()
         {
-            return View();
+            List<User> list = null;
+            using (var db = new MySqlContext())
+            {
+                db.Configuration.AutoDetectChangesEnabled = true;
+                list =  db.Users.ToList();
+                
+            }
+            return View(list);
         }
     }
 }
