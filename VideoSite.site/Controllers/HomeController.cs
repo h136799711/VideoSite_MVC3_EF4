@@ -23,7 +23,7 @@ namespace VideoSite.site.Controllers
         public ActionResult About()
         {
             List<User> list = null;
-            using (var db = new MySqlContext())
+            using (var db = new MSSqlContext())
             {
                 db.Configuration.AutoDetectChangesEnabled = true;
                 list =  db.Users.ToList();

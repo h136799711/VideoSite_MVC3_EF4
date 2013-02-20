@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 
-using VideoSite.EF.Infrastructure;
 namespace VideoSite.EF.Model
 {
-    public class MSSqlContext:DbContext,IUnitOfWork
+    public class MSSqlContext:BaseContext
     {
         public MSSqlContext()
             : base()
@@ -16,7 +11,7 @@ namespace VideoSite.EF.Model
         }
         public DbSet<User> Users { get; set; }
 
-        public void Save()
+        public new void Save()
         {
             this.SaveChanges();
         }
