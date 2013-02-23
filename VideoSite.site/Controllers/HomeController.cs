@@ -31,5 +31,14 @@ namespace VideoSite.site.Controllers
             }
             return View(list);
         }
+        [AcceptVerbs(HttpVerbs.Post)]
+        [ValidateInput(false)]
+        public ActionResult Add(FormCollection collection)
+        {
+            this.ValidateRequest = false;
+            ViewBag.Message = collection["ckeditor"];
+
+            return View();
+        }
     }
 }

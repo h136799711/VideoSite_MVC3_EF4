@@ -1,6 +1,34 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+@section JAVASCRIPTANDCSS {
+	<script type="text/javascript" src="@Url.Content("~/Scripts/jquery/1.8.3.min.js")"></script>
+	<script type="text/javascript" src="@Url.Content("~/Scripts/ckeditor/ckeditor.js")"></script>
+	
+	<script type="text/javascript">
+		function onSubmitCkeditor()
+		{
+			CKEDITOR.instances["editor1"].setData(encodeURI(CKEDITOR.instances["editor1"].getData()));
+			
+			$.ajax({url:"/Home/Add",type:"post",data:{"dat":CKEDITOR.instances["editor1"].getData()},success:function(){
+				CKEDITOR.instances["editor1"].setData(decodeURI(CKEDITOR.instances["editor1"].getData()));
+				$("#result").html((CKEDITOR.instances["editor1"].getData()));
+			}});
+return false;
+		}	
+	</script>
+}
 
-<h2>@ViewBag.Message</h2>
+<h2  id="result">@ViewBag.Message</h2>
+@using (Html.BeginForm()){
+     <div >
+         <fieldset> 
+			<textarea class="ckeditor" cols="80" id="editor1" name="ckeditor"  rows="10">
 
+			</textarea>
+            <p>
+                 <input type="button" value="submit" onClick="return onSubmitCkeditor();" />
+             </p>
+         </fieldset>
+     </div>
+}
