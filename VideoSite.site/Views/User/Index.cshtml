@@ -1,19 +1,12 @@
-﻿@model IList<VideoSite.EF.Model.User>
+﻿@model IEnumerable<VideoSite.EF.Model.User>
 
 @{
-    ViewBag.Title = "About";
+    ViewBag.Title = "User List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
- @section JAVASCRIPTANDCSS{
-	<style type="text/css">
-		.users-list {
-			list-style-type:none;
-		}
-	</style>
- }
+<div class="page">
 <h2>总共数: @Model.Count()</h2>
-<ul class="users-list">
-	
+<ul class="users-list" >
 	<hr/>
 	 @foreach(var user in Model){
 		<li>@user.UserId</li>
@@ -23,3 +16,6 @@
 		<hr/>
 	}
 </ul>
+</div>
+
+

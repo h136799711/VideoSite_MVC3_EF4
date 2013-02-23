@@ -6,24 +6,15 @@
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />  
 	@RenderSection("JAVASCRIPTANDCSS", required: false)
 </head>
-<body>
-    <div class="page">
-        <header>
-            <div id="title">
-                <h1>My MVC Application</h1>
-            </div>
-            <nav>
-                <ul id="menu">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                </ul>
-            </nav>
-        </header>
-        <section id="main">
-			@RenderBody();
-        </section>
-        <footer>
-        </footer>
+<body id="@ViewBag.BodyId">
+    <div id="container">
+		@*加载头部*@	
+		@Html.Partial("_header")
+        <div class="content">
+			@RenderBody()
+        </div>
+		@*加载头部*@				
+		@Html.Partial("_footer")
     </div>
 </body>
 </html>

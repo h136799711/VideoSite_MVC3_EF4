@@ -8,7 +8,8 @@ namespace VideoSite.EF.Infrastructure
 {
     public class Repository<T>:IRepository<T>,IUnitOfWork where T : class
     {
-        public DbContext context;
+        public DbContext context { get; set; }
+
         public Repository(IUnitOfWork unitOfWork)
         {
             if (unitOfWork == null)
@@ -37,8 +38,7 @@ namespace VideoSite.EF.Infrastructure
 
         public void Modify(T entity)
         {
-            
-            
+            context.Entry<T>(entity).State = System.Data.EntityState.Modified;
         }
 
         public IEnumerable<T> List()

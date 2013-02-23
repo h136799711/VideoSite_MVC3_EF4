@@ -4,17 +4,17 @@ to use a different color start by replacing all instances of
 #5c87b2 with your new color.
 ----------------------------------------------------------*/
 body {
-    background-color: #5c87b2;
+    background-color: #CECECE;
     font-size: .85em;
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
-    color: #696969;
+    text-align:center;
 }
 
 a:link {
     color: #034af3;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 a:visited {
@@ -23,7 +23,7 @@ a:visited {
 
 a:hover {
     color: #1d60ff;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 a:active {
@@ -70,16 +70,21 @@ h4 {
 h5, h6 {
     font-size: 1em;
 }
+ul li 
+{
+    list-style-type:none;
+}
 
 /* PRIMARY LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
 
 /* you can specify a greater or lesser percentage for the 
 page width. Or, you can specify an exact pixel width. */
-.page {
+.page, .content{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    text-align:left;
 }
 
 header, #header {
@@ -99,15 +104,12 @@ header h1, #header h1 {
     font-size: 32px !important;
     text-shadow: 1px 1px 2px #111;
 }
-
-#main {
-    padding: 30px 30px 15px 30px;
-    background-color: #fff;
-    border-radius: 4px 0 0 0;
-    -webkit-border-radius: 4px 0 0 0;
-    -moz-border-radius: 4px 0 0 0;
+#container 
+{
+    color:Maroon;
+    text-align:center;
+    margin:0 auto;
 }
-
 footer, 
 #footer {
     background-color: #fff;
@@ -122,3 +124,18 @@ footer,
     -moz-border-radius: 0 0 4px 4px;
 }
 
+.HAlignLi  ul li
+{
+    float:left;
+    margin:0 5px 0 5px;
+}
+
+.clearLeft
+{
+    clear:left;
+}
+
+#menu
+{
+    font-size:x-large;
+}

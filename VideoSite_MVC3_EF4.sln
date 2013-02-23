@@ -30,6 +30,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Video.EF.TestRepository", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoSite.Site.Controllers", "VideoSite.Site.Controllers\VideoSite.Site.Controllers.csproj", "{F613C37B-7C38-4129-81DB-70C1D6FDBA5A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{EAEC0B87-2284-449E-8E73-7C354D843726}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseService", "DataBaseService\DataBaseService.csproj", "{B9BF9639-8DE4-4445-A12D-F32E6D77106D}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = VideoSite_MVC3_EF41.vsmdi
@@ -71,6 +75,10 @@ Global
 		{F613C37B-7C38-4129-81DB-70C1D6FDBA5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F613C37B-7C38-4129-81DB-70C1D6FDBA5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F613C37B-7C38-4129-81DB-70C1D6FDBA5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9BF9639-8DE4-4445-A12D-F32E6D77106D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9BF9639-8DE4-4445-A12D-F32E6D77106D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9BF9639-8DE4-4445-A12D-F32E6D77106D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9BF9639-8DE4-4445-A12D-F32E6D77106D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,5 +92,6 @@ Global
 		{A9858BF9-0519-4938-BECC-3607C1EF304E} = {47541AC3-19BD-43E2-ACEC-33968D16E354}
 		{8AA4A751-222A-49E6-B687-323D39485628} = {9F7D8763-BEB4-4D2F-BD5F-E36D156C1E38}
 		{F613C37B-7C38-4129-81DB-70C1D6FDBA5A} = {9F7D8763-BEB4-4D2F-BD5F-E36D156C1E38}
+		{B9BF9639-8DE4-4445-A12D-F32E6D77106D} = {EAEC0B87-2284-449E-8E73-7C354D843726}
 	EndGlobalSection
 EndGlobal

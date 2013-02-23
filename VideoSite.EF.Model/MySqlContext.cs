@@ -10,9 +10,8 @@ namespace VideoSite.EF.Model
         {
             Database.SetInitializer<MySqlContext>(new DropCreateDatabaseIfModelChanges<MySqlContext>());
         }
-        public DbSet<User> Users { get; set; }
 
-        public new void Save()
+        public override void Save()
         {
             this.SaveChanges();
         }

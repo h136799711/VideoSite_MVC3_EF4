@@ -1,4 +1,11 @@
-﻿using System.Data.Entity;
+﻿/****************************************************
+ * MSSQL 访问类 
+ * 创建日期：2013-02-23 
+ * 作者:何必都
+ * 最近修改日期：2013-02-23 
+ ****************************************************/
+
+using System.Data.Entity;
 
 namespace VideoSite.EF.Model
 {
@@ -9,9 +16,8 @@ namespace VideoSite.EF.Model
         {
             Database.SetInitializer<MSSqlContext>(new DropCreateDatabaseIfModelChanges<MSSqlContext>());
         }
-        public DbSet<User> Users { get; set; }
 
-        public new void Save()
+        public override void Save()
         {
             this.SaveChanges();
         }
