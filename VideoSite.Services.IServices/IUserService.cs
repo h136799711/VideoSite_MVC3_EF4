@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using VideoSite.EF.Infrastructure;
 using VideoSite.EF.Model;
-
-namespace VideoSite.EF.IRepository
+namespace VideoSite.Services.IServices
 {
-    public interface IUserRepository:IRepository<User>
+    public interface IUserService : IDataBaseService<User>
     {
         User GetUserById(int id);
     }

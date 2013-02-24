@@ -45,11 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseContext.cs" />
     <Compile Include="Comment.cs" />
-    <Compile Include="FactoryContext.cs" />
-    <Compile Include="MSSqlContext.cs" />
-    <Compile Include="MySqlContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Record.cs" />
     <Compile Include="Tag.cs" />

@@ -1,0 +1,29 @@
+﻿@model VideoSite.EF.Model.User
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>User</legend>
+
+    <div class="display-label">Username</div>
+    <div class="display-field">@Model.Username</div>
+
+    <div class="display-label">Password</div>
+    <div class="display-field">@Model.Password</div>
+
+    <div class="display-label">UserInfoId</div>
+    <div class="display-field">@Model.UserInfoId</div>
+
+    <div class="display-label">Extra</div>
+    <div class="display-field">@Model.Extra</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.UserId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

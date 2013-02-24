@@ -8,18 +8,23 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 namespace VideoSite.EF.Model
 {
 
+    /// <summary>
+    /// 记录类
+    /// </summary>
     public class Record
     {
-        public int RecordID {get;set;}
+        public int RecordID { get; set; }
+        public int UserId { get; set; }
         public DateTime PublishTime { get; set; }
         public string Content { get; set; }
         public string TagIdList { get; set; }
         public string CommentsIdList { get; set; }
         public DateTime ModifyDate { get; set; }
         public string Extra { get; set; }
+        public User RecordUser { get; set; }
+
     }
 }
