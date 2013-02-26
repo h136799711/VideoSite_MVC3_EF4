@@ -4,13 +4,45 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@section JAVASCRIPTANDCSS{
+<style type="text/css">
+/* 表格样式*/
+#dataTable{
+    table-layout:fixed;
+    empty-cells:show; 
+    border-collapse: collapse;
+    margin:0 auto;
+    font-size:12px;
+    color:#666;
+}
+#dataTable td{
+    height:20px;
+}
+#dataTable td,th{
+    border:1px solid #cad9ea;
+    padding:0 1em 0;
+}
+.trEven01{
+    background-color:#F5FAFE;
+}
+.trOdd01{
+    background-color:#F5FAFE;
+}
+</style>
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#dataTable tr:odd").addClass("trOdd01");
+	});
+</script>
+}
 <h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
+<div>
+<table id="dataTable">
     <tr>
         <th></th>
         <th>
@@ -51,3 +83,4 @@
 
 </table>
 
+</div>

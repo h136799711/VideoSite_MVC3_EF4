@@ -8,10 +8,20 @@ using VideoSite.EF.IRepository;
 
 namespace VideoSite.Web.Controllers
 {
+    /// <summary>
+    /// User Controller
+    /// </summary>
     public class UserController : Controller
     {
+        /// <summary>
+        /// The m_ user service
+        /// </summary>
         protected IUserService m_UserService;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserController"/> class.
+        /// </summary>
+        /// <param name="UserService">The user service.</param>
         public UserController(IUserService UserService)
         {
             m_UserService = UserService;
@@ -19,6 +29,10 @@ namespace VideoSite.Web.Controllers
         //
         // GET: /User/
 
+        /// <summary>
+        /// Indexes this instance.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             return View(m_UserService.List());
@@ -27,6 +41,11 @@ namespace VideoSite.Web.Controllers
         //
         // GET: /User/Details/5
 
+        /// <summary>
+        /// Detailses the specified id.
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <returns></returns>
         public ActionResult Details(int id)
         {
             return View(m_UserService.GetUserById(id));
@@ -35,6 +54,10 @@ namespace VideoSite.Web.Controllers
         //
         // GET: /User/Create
 
+        /// <summary>
+        /// Creates this instance.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Create()
         {
             return View();

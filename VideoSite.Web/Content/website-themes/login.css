@@ -1,0 +1,98 @@
+
+/* HTML 标签自带样式的重置 */
+body{
+	padding:0;
+	margin:0;
+	border:0;
+	width:100%;
+	height:100%;
+}
+
+/* HTML 标签自带样式的重定义 */
+input.baseinput {
+	height: 18px;
+	background: #FFF transparent scroll repeat 0% 0%;
+	border: 0px ;
+	margin-top: -2px;
+}
+
+/* */
+div#login_container {	
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	background:url(images/css/2.jpg) transparent no-repeat scroll 0px 0px;
+	
+}
+
+div.login_panel{
+	margin-left:auto;
+	margin-right:auto;
+	width:800px;
+	height:260px;
+	position:absolute;
+    top:50%;   
+	left:50%;   
+	margin-left:-400px;
+	margin-top:-130px; 
+	background:url(images/css/boxbg.png) transparent no-repeat ;
+}
+div.login_panel .company_info{
+	float:left;
+	width:400px;
+	height:150px;
+	margin-left:30px;
+	margin-top:50px;
+}
+div.login_panel .login_info{
+	float:right;	
+	margin:20px;
+	margin-left:0px;
+	height:200px;
+	width:270px;
+}
+#login_form{
+	
+}
+#login_form .form_item{
+	margin:15px 5px 15px 5px;
+	padding:5px;
+	background:#fff;
+	border:1px solid #000;
+	-moz-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+#login_form .loginImg{	
+	width:185px;
+	height:40px;
+	border:0px;
+	cursor:pointer;
+	margin-top:15px;
+	background:url(images/css/btnlogin.png) no-repeat ;
+}
+
+
+.HAlignLi  ul li
+{
+    float:left;
+    margin:0 5px 0 5px;
+}
+
+.clearLeft
+{
+    clear:left;
+}
+
+#menu
+{
+    font-size:x-large;
+}
+
+
+
+
+
