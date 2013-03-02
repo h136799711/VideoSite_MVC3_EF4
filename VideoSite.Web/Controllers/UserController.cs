@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using VideoSite.Services.IServices;
-using VideoSite.EF.IRepository;
-
+﻿
 namespace VideoSite.Web.Controllers
 {
+    using System.Web.Mvc;
+    using VideoSite.Services.IServices;
     /// <summary>
     /// User Controller
     /// </summary>
@@ -26,63 +21,96 @@ namespace VideoSite.Web.Controllers
         {
             m_UserService = UserService;
         }
-        //
-        // GET: /User/
 
         /// <summary>
         /// Indexes this instance.
+        /// GET: /User/Index
         /// </summary>
         /// <returns></returns>
         public ActionResult Index()
         {
-            return View(m_UserService.List());
+            if (Request.IsAjaxRequest())
+            {
+                return View("JSIndex.html",m_UserService.List());
+            }
+            else
+            {
+                return View(m_UserService.List());
+            }
         }
-
-        //
-        // GET: /User/Details/5
 
         /// <summary>
         /// Detailses the specified id.
+        ///  GET: /User/Details/5
         /// </summary>
         /// <param name="id">The id.</param>
         /// <returns></returns>
         public ActionResult Details(int id)
         {
-            return View(m_UserService.GetUserById(id));
+            if (Request.IsAjaxRequest())
+            {
+                return View("JSDetails.html", m_UserService.GetUserById(id));
+            }
+            else
+            {
+                return View(m_UserService.GetUserById(id));
+            }
         }
-
-        //
-        // GET: /User/Create
 
         /// <summary>
         /// Creates this instance.
+        /// GET: /User/Create
         /// </summary>
         /// <returns></returns>
         public ActionResult Create()
         {
-            return View();
-        } 
+            if (Request.IsAjaxRequest())
+            {
+                return View("JSCreate.html");
+            }
+            else
+            {
+                return View();
+            }
+        }
 
-        //
-        // POST: /User/Create
-
+        /// <summary>
+        /// Creates the specified collection.
+        /// POST: /User/Create
+        /// </summary>
+        /// <param name="collection">The collection.</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
                 return RedirectToAction("Index");
         }
         
-        //
-        // GET: /User/Edit/5
- 
+        /// <summary>
+        /// Edits the specified id.
+        /// GET: /User/Edit/5
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <returns></returns>
         public ActionResult Edit(int id)
         {
-            return View(m_UserService.GetUserById(id));
+            if (Request.IsAjaxRequest())
+            {
+                return View("JSCreate.html", m_UserService.GetUserById(id));
+            }
+            else
+            {
+                return View(m_UserService.GetUserById(id));
+            }
         }
-
-        //
-        // POST: /User/Edit/5
-
+        
+        /// <summary>
+        /// Edits the specified id.
+        /// POST: /User/Edit/5
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <param name="collection">The collection.</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -97,18 +125,25 @@ namespace VideoSite.Web.Controllers
                 return View();
             }
         }
-
-        //
-        // GET: /User/Delete/5
- 
+        
+        /// <summary>
+        /// Deletes the specified id.
+        /// GET: /User/Delete/5
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <returns></returns>
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        //
-        // POST: /User/Delete/5
-
+        /// <summary>
+        /// Deletes the specified id.
+        /// POST: /User/Delete/5
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <param name="collection">The collection.</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
@@ -123,5 +158,8 @@ namespace VideoSite.Web.Controllers
                 return View();
             }
         }
+
+
+
     }
 }

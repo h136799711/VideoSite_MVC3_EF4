@@ -28,10 +28,16 @@ namespace VideoSite.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                 "HtmlResource", // Route name
+                 "{htmlName}", // URL with parameters 
+                 new { controller = "HtmlResource", action = "Get", htmlName = "index.html" } // Parameter defaults'
+                 , new { htmlName = @"\b\w+.html$" }
+             );
+            routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters 
                 new { controller = "User", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-            );
+            ); 
 
         }
         public static void RegisterAndResolveType()

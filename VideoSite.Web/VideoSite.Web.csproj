@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HtmlResourceController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -434,6 +435,7 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Content\website-themes\base.css" />
+    <Content Include="Content\website-themes\header.css" />
     <Content Include="Content\website-themes\IE.css" />
     <Content Include="Content\website-themes\images\css\1.jpg" />
     <Content Include="Content\website-themes\images\css\2.jpg" />
@@ -443,6 +445,7 @@
     <Content Include="Content\website-themes\images\css\btnlogin.png" />
     <Content Include="Content\website-themes\images\css\scrolltop.png" />
     <Content Include="Content\website-themes\login.css" />
+    <Content Include="Content\website-themes\table.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\ckeditor\build-config.js" />
     <Content Include="Scripts\ckeditor\ckeditor.js" />
@@ -1069,6 +1072,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jquery\1.8.3.js" />
     <Content Include="Scripts\jquery\1.8.3.min.js" />
+    <Content Include="Scripts\jquery\1.9.1.min.js" />
     <Content Include="Scripts\jquery\plugins\lazyload.js" />
     <Content Include="Scripts\jquery\ui\1.9.2.js" />
     <Content Include="Scripts\jquery\ui\1.9.2.min.js" />
@@ -1181,15 +1185,21 @@
     <None Include="Views\Error\Unknown.cshtml" />
     <None Include="Views\Home\About.cshtml" />
     <None Include="Views\Home\Add.cshtml" />
+    <None Include="Views\HtmlResource\index.html.cshtml" />
     <None Include="Views\Shared\Login.cshtml" />
     <None Include="Views\Shared\_footer.cshtml" />
     <None Include="Views\Shared\_header.cshtml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Views\Shared\_JSLayout.cshtml" />
     <None Include="Views\User\Create.cshtml" />
     <None Include="Views\User\Details.cshtml" />
     <None Include="Views\User\Edit.cshtml" />
     <None Include="Views\User\Index.cshtml" />
+    <None Include="Views\User\JSCreate.cshtml" />
+    <None Include="Views\User\JSDetails.cshtml" />
+    <None Include="Views\User\JSEdit.cshtml" />
+    <None Include="Views\User\JSIndex.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -1208,7 +1218,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3683</DevelopmentServerPort>
+          <DevelopmentServerPort>1713</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

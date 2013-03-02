@@ -1,5 +1,4 @@
-﻿@model IList<VideoSite.EF.Model.User>
-
+﻿
 @{
     ViewBag.Title = "About";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,15 +10,8 @@
 		}
 	</style>
  }
-<h2>总共数: @Model.Count()</h2>
+<h2>总共数:</h2>
 <ul class="users-list">
 	
 	<hr/>
-	 @foreach(var user in Model){
-		<li>@user.UserId</li>
-		<li>@user.Username</li>
-		<li>@user.Password</li>
-		<li>@user.Extra</li>
-		<hr/>
-	}
 </ul>
