@@ -3,15 +3,10 @@
     ViewBag.Title = "About";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
- @section JAVASCRIPTANDCSS{
-	<style type="text/css">
-		.users-list {
-			list-style-type:none;
-		}
-	</style>
- }
-<h2>总共数:</h2>
-<ul class="users-list">
+
+<form method="Post" action="/User/Index">
 	
 	<hr/>
-</ul>
+	
+	<input type="submit" value="submit" />
+</form>

@@ -8,9 +8,10 @@ namespace VideoSite.Web.Controllers
 {
     public class ErrorController : Controller
     {
-        //
-        // GET: /Error/
-
+        /// <summary>
+        /// Indexes this instance.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
 
@@ -18,14 +19,36 @@ namespace VideoSite.Web.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Nots the found.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult NotFound()
         {
-            return View();
+            if (Request.IsAjaxRequest())
+            {
+                return Json(new { Code = 404 }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return View();
+            } 
         }
 
+        /// <summary>
+        /// Unknowns this instance.
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Unknown()
         {
-            return View();
+            if (Request.IsAjaxRequest())
+            {
+                return Json(new { Code = -1024 }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return View();
+            } 
         }
     }
 }

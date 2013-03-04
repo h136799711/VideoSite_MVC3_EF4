@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Basic DataGrid - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/easyui-themes/default/easyui.css")">
+	<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/easyui-themes/icon.css")">
+	<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/easyui-themes/demo.css")">
+	<script type="text/javascript" src="@Url.Content("~/Scripts/jquery/1.8.3.min.js")"></script>
+	<script type="text/javascript" src="@Url.Content("~/Scripts/easyui/jquery.easyui.min.js")"></script>
+</head>
+<body>
+	<h2>Basic DataGrid</h2>
+	<div class="demo-info">
+		<div class="demo-tip icon-tip"></div>
+		<div>The DataGrid is created from markup, no JavaScript code needed.</div>
+	</div>
+	<div style="margin:10px 0;"></div>
+	
+	<table class="easyui-datagrid" title="Basic DataGrid" style="width:700px;height:250px"
+			data-options="singleSelect:true,collapsible:true,url:'/User/Index'">
+		<thead>
+			<tr>
+				<th data-options="field:'UserId',width:80">UserId</th>
+				<th data-options="field:'Username',width:100">Username</th>
+				<th data-options="field:'Password',width:80,align:'right'">Password</th>
+				<th data-options="field:'UserInfoId',width:80,align:'right'">UserInfoId</th>
+				<th data-options="field:'Extra',width:250">Extra</th>
+			</tr>
+		</thead>
+	</table>
+
+</body>
+</html>

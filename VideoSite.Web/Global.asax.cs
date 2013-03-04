@@ -11,6 +11,7 @@ using Autofac;
 using VideoSite.EF.Infrastructure;
 using VideoSite.Services.IServices;
 using VideoSite.Services.Services;
+using VideoSite.Web.Common;
 namespace VideoSite.Web
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
@@ -20,7 +21,8 @@ namespace VideoSite.Web
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            filters.Add(new AppHandleErrorAttribute());
+         //   filters.Add(new HandleErrorAttribute());
         }
 
         public static void RegisterRoutes(RouteCollection routes)
@@ -28,17 +30,17 @@ namespace VideoSite.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                 "HtmlResource", // Route name
-                 "{htmlName}", // URL with parameters 
-                 new { controller = "HtmlResource", action = "Get", htmlName = "index.html" } // Parameter defaults'
-                 , new { htmlName = @"\b\w+.html$" }
+                 "HtmlAction", // Route name
+                 "{action}/{htmlName}", // URL with parameters 
+                new { controller = "Html" }, // Parameter defaults
+                  new { htmlName = @"\b\w+.html$" }
              );
+            
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters 
                 new { controller = "User", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             ); 
-
         }
         public static void RegisterAndResolveType()
         {
@@ -57,7 +59,6 @@ namespace VideoSite.Web
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
-
 
         }
     }

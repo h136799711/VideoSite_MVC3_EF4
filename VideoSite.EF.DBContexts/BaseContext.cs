@@ -31,8 +31,10 @@ namespace VideoSite.EF.DBContexts
             modelBuilder.Entity<User>().Property(T => T.Password).IsRequired();
             modelBuilder.Entity<Record>()
                  .HasRequired(T => T.RecordUser)
-             .WithMany(T => T.Record)
+             .WithMany(T => T.Records)
              .HasForeignKey(T => T.UserId);
+
+
             base.OnModelCreating(modelBuilder);
         }
     }

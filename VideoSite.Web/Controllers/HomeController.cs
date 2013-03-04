@@ -32,5 +32,15 @@ namespace VideoSite.Web.Controllers
 
             return View();
         }
+
+
+        [AcceptVerbs(HttpVerbs.Get)]
+        public ActionResult Admin()
+        {
+            ViewBag.Message = "后台管理系统";
+
+            return View();
+        }
+
     }
 }

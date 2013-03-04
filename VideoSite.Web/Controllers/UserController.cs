@@ -3,6 +3,8 @@ namespace VideoSite.Web.Controllers
 {
     using System.Web.Mvc;
     using VideoSite.Services.IServices;
+    using System.Collections;
+    using System.Linq;
     /// <summary>
     /// User Controller
     /// </summary>
@@ -29,9 +31,11 @@ namespace VideoSite.Web.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
+
             if (Request.IsAjaxRequest())
             {
-                return View("JSIndex.html",m_UserService.List());
+                IEnumerable list = from user in m_UserService.List() select new { user.UserId, user.Username,user.Password,user.UserInfoId,user.Extra };
+                return Json(list);
             }
             else
             {
